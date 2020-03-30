@@ -122,6 +122,6 @@ chapter of the *R Markdown Cookbook* from Yihui Xie.
 ## Notes
 
 Any element already in the viewport when the user loads the page will
-have it’s animation triggered immediately if one has been set. In other
+have its animation triggered immediately if one has been set. In other
 words, it will not wait for the user to begin scrolling before
 initiating the animation on these elements.
