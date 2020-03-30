@@ -19,5 +19,5 @@ RoxygenNote: 7.1.0
 Imports: 
     jsonlite,
     htmltools
-URL: https://felixluginbuhl.com/anivew, https://github.com/lgnbhl/anivew
-BugReports: https://github.com/lgnbhl/anivew/issues
+URL: https://felixluginbuhl.com/aniview, https://github.com/lgnbhl/aniview
+BugReports: https://github.com/lgnbhl/aniview/issues
