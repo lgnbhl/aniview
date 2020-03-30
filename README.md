@@ -10,7 +10,8 @@ status](https://gitlab.com/lgnbhl/aniview/badges/master/pipeline.svg)](https://g
 
 > Animate Shiny and R Markdown content when it comes into view
 
-Animate Shiny and R Markdown content when it comes into view using
+The package `aniview` allows to animate Shiny and R Markdown content
+when it comes into view using
 [animate-css](https://daneden.github.io/animate.css/) thanks to
 [AniView](https://jjcosgrove.github.io/jquery-aniview/).
 

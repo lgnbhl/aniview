@@ -11,7 +11,7 @@ output: github_document
 
 > Animate Shiny and R Markdown content when it comes into view
 
-Animate Shiny and R Markdown content when it comes into view using [animate-css](https://daneden.github.io/animate.css/) thanks to [AniView](https://jjcosgrove.github.io/jquery-aniview/).
+The package `aniview` allows to animate Shiny and R Markdown content when it comes into view using [animate-css](https://daneden.github.io/animate.css/) thanks to [AniView](https://jjcosgrove.github.io/jquery-aniview/).
 
 ## Installation
 
