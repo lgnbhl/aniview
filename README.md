@@ -103,7 +103,7 @@ aniview::use_aniview()
 ```
 
 Then you can animate any content of your R Markdown document using the
-‘:::’ markers of the `rmarkdown` package followed by `{.aniview
+`:::` markers of the `rmarkdown` package followed by `{.aniview
 data-av-animation="ANIMATE-CSS EFFECT"}`. The animate-css effects are
 listed [here](https://daneden.github.io/animate.css/).
 
