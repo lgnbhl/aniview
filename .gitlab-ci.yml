@@ -4,3 +4,4 @@ test:
    script:
     - R -e 'install.packages("jsonlite")'
     - R -e 'devtools::check()'
+
