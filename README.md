@@ -14,7 +14,7 @@ Animate Shiny and R Markdown content when it comes into view using
 [animate-css](https://daneden.github.io/animate.css/) thanks to
 [AniView](https://jjcosgrove.github.io/jquery-aniview/).
 
-## Usage
+## Installation
 
 Install the package from Github.
 
@@ -125,8 +125,8 @@ chapter of the *R Markdown Cookbook* from Yihui Xie.
 
 [xaringan](https://github.com/yihui/xaringan) is a package for creating
 slideshows with [remark.js](https://github.com/gnab/remark) using R
-Markdown. You can take a look at its introductory presentation
-[here](https://slides.yihui.name/xaringan/).
+Markdown. You can take a look at its [introductory
+presentation](https://slides.yihui.name/xaringan/).
 
 You can easily animate a slide using the “animated” class of
 [animate-css](https://daneden.github.io/animate.css/) with any animation
