@@ -107,7 +107,7 @@ Then you can animate any content of your R Markdown document using the
 data-av-animation="ANIMATE-CSS EFFECT"}`. The animate-css effects are
 listed [here](https://daneden.github.io/animate.css/).
 
-Below and example with the “slideInUp” effect.
+Below an example with the “slideInUp” effect.
 
 ``` md
 ::: {.aniview data-av-animation="slideInUp"}
