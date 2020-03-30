@@ -44,7 +44,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">aniview</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -100,6 +100,9 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#aniview" class="anchor"></a>aniview <img src="reference/figures/logo.png" align="right">
 </h1></div>
+<blockquote>
+<p>Animate Shiny and R Markdown content when it comes into view</p>
+</blockquote>
 <p>Animate Shiny and R Markdown content when it comes into view using <a href="https://daneden.github.io/animate.css/">animate-css</a> thanks to <a href="https://jjcosgrove.github.io/jquery-aniview/">AniView</a>.</p>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -107,10 +110,11 @@
 <p>Install the package from Github.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("remotes")</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">remotes<span class="op">::</span><span class="kw"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"lgnbhl/aniview"</span>)</a></code></pre></div>
-<div id="shiny" class="section level3">
-<h3 class="hasAnchor">
-<a href="#shiny" class="anchor"></a>Shiny</h3>
-<p>In order to use anview, you must first call <code><a href="reference/use_aniview.html">use_aniview()</a></code> in the apps’ UI.</p>
+</div>
+<div id="shiny" class="section level2">
+<h2 class="hasAnchor">
+<a href="#shiny" class="anchor"></a>Shiny</h2>
+<p>In order to use aniview, you must first call <code><a href="reference/use_aniview.html">use_aniview()</a></code> in the apps’ UI.</p>
 <p>Then simply apply <code><a href="reference/aniview.html">aniview()</a></code> to any shiny element with an animation listed on the <a href="https://daneden.github.io/animate.css/">animate-css website</a>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(shiny)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</a>
@@ -133,56 +137,75 @@
 <a class="sourceLine" id="cb2-19" data-line-number="19">}</a>
 <a class="sourceLine" id="cb2-20" data-line-number="20"></a>
 <a class="sourceLine" id="cb2-21" data-line-number="21"><span class="kw"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span>(ui, server)</a></code></pre></div>
-</div>
-<div id="r-markdown" class="section level3">
-<h3 class="hasAnchor">
-<a href="#r-markdown" class="anchor"></a>R Markdown</h3>
-<p>To animate a element of a R Markdown document, you must first call <code><a href="reference/use_aniview.html">use_aniview()</a></code> inside a R code chunk with <code>{r, echo = FALSE}</code> so the code will not be shown in the final document.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="st">`</span><span class="dt"></span><span class="st">``</span><span class="dt">{r, echo = FALSE}</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="dt">aniview::use_aniview()</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">`</span><span class="st">``</span></a></code></pre></div>
-<p>Then you can animate any content of your R Markdown document using the ‘:::’ markers of the <code>rmarkdown</code> package followed by <code>{.aniview data-av-animation="ANIMATE-CSS EFFECT"}</code>. The animate-css effects are listed <a href="https://daneden.github.io/animate.css/">here</a>.</p>
-<p>Below and example with the “slideInUp” effect.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode md"><code class="sourceCode markdown"><a class="sourceLine" id="cb4-1" data-line-number="1">::: {.aniview data-av-animation="slideInUp"}</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">This element will be animated.</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">:::</a></code></pre></div>
-<p>You can learn more about the CSS class markers in the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">Custom block</a> chapter of the <em>R Markdown Cookbook</em> from Yihui Xie.</p>
-</div>
 <div id="htmlwidgets" class="section level3">
 <h3 class="hasAnchor">
 <a href="#htmlwidgets" class="anchor"></a>Htmlwidgets</h3>
 <p>The function <code><a href="reference/aniview.html">aniview()</a></code> doesn’t work directly with <a href="https://www.htmlwidgets.org/">htmlwidgets</a>.</p>
 <p>The solution is to put the htmlwidget inside a container and animate it.</p>
 <p>Below an example animating the <code><a href="https://rdrr.io/pkg/shinydashboard/man/box.html">box()</a></code> from <code>shinydashboard</code> in order to use <code>plotly</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(shinydashboard)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(plotly)</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">ui &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardPage.html">dashboardPage</a></span>(</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">  <span class="kw"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardHeader.html">dashboardHeader</a></span>(<span class="dt">title =</span> <span class="st">"Basic dashboard"</span>),</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">  <span class="kw"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardSidebar.html">dashboardSidebar</a></span>(),</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7">  <span class="kw"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardBody.html">dashboardBody</a></span>(</a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">    <span class="kw"><a href="reference/use_aniview.html">use_aniview</a></span>(), <span class="co"># use_aniview() should be inside the body element</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9">    <span class="kw"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidRow</a></span>(</a>
-<a class="sourceLine" id="cb5-10" data-line-number="10">      <span class="kw"><a href="reference/aniview.html">aniview</a></span>(<span class="kw"><a href="https://rdrr.io/pkg/shinydashboard/man/box.html">box</a></span>(<span class="kw"><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html">plotlyOutput</a></span>(<span class="st">"plotly"</span>)), <span class="dt">animation =</span> <span class="st">"slideInLeft"</span>),</a>
-<a class="sourceLine" id="cb5-11" data-line-number="11">    )</a>
-<a class="sourceLine" id="cb5-12" data-line-number="12">  )</a>
-<a class="sourceLine" id="cb5-13" data-line-number="13">)</a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15">server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</a>
-<a class="sourceLine" id="cb5-16" data-line-number="16">  output<span class="op">$</span>plotly &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html">renderPlotly</a></span>({</a>
-<a class="sourceLine" id="cb5-17" data-line-number="17">    gg &lt;-<span class="st"> </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mpg, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(displ, hwy, <span class="dt">colour =</span> class)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="st">      </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>()</a>
-<a class="sourceLine" id="cb5-19" data-line-number="19">    <span class="kw"><a href="https://rdrr.io/pkg/plotly/man/ggplotly.html">ggplotly</a></span>(gg)</a>
-<a class="sourceLine" id="cb5-20" data-line-number="20">  })</a>
-<a class="sourceLine" id="cb5-21" data-line-number="21">}</a>
-<a class="sourceLine" id="cb5-22" data-line-number="22"></a>
-<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="kw"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span>(ui, server)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(shinydashboard)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(plotly)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">ui &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardPage.html">dashboardPage</a></span>(</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">  <span class="kw"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardHeader.html">dashboardHeader</a></span>(<span class="dt">title =</span> <span class="st">"Basic dashboard"</span>),</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">  <span class="kw"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardSidebar.html">dashboardSidebar</a></span>(),</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">  <span class="kw"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardBody.html">dashboardBody</a></span>(</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">    <span class="kw"><a href="reference/use_aniview.html">use_aniview</a></span>(), <span class="co"># use_aniview() should be inside the body element</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">    <span class="kw"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidRow</a></span>(</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">      <span class="kw"><a href="reference/aniview.html">aniview</a></span>(<span class="kw"><a href="https://rdrr.io/pkg/shinydashboard/man/box.html">box</a></span>(<span class="kw"><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html">plotlyOutput</a></span>(<span class="st">"plotly"</span>)), <span class="dt">animation =</span> <span class="st">"slideInLeft"</span>),</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">    )</a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">  )</a>
+<a class="sourceLine" id="cb3-13" data-line-number="13">)</a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb3-15" data-line-number="15">server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</a>
+<a class="sourceLine" id="cb3-16" data-line-number="16">  output<span class="op">$</span>plotly &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html">renderPlotly</a></span>({</a>
+<a class="sourceLine" id="cb3-17" data-line-number="17">    gg &lt;-<span class="st"> </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(mpg, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(displ, hwy, <span class="dt">colour =</span> class)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="st">      </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>()</a>
+<a class="sourceLine" id="cb3-19" data-line-number="19">    <span class="kw"><a href="https://rdrr.io/pkg/plotly/man/ggplotly.html">ggplotly</a></span>(gg)</a>
+<a class="sourceLine" id="cb3-20" data-line-number="20">  })</a>
+<a class="sourceLine" id="cb3-21" data-line-number="21">}</a>
+<a class="sourceLine" id="cb3-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb3-23" data-line-number="23"><span class="kw"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span>(ui, server)</a></code></pre></div>
 </div>
 </div>
-<div id="notes" class="section level2">
+<div id="r-markdown" class="section level2">
 <h2 class="hasAnchor">
-<a href="#notes" class="anchor"></a>Notes</h2>
-<p>Any element already in the viewport when the user loads the page will have it’s animation triggered immediately if one has been set. In other words, it will not wait for the user to begin scrolling before initiating the animation on these elements.</p>
+<a href="#r-markdown" class="anchor"></a>R Markdown</h2>
+<p>To animate a element of a R Markdown document, you must first call <code><a href="reference/use_aniview.html">use_aniview()</a></code> inside a R code chunk with <code>{r, echo = FALSE}</code> so the code will not be shown in the final document.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="st">`</span><span class="dt"></span><span class="st">``</span><span class="dt">{r, echo = FALSE}</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="dt">aniview::use_aniview()</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="st">`</span><span class="st">``</span></a></code></pre></div>
+<p>Then you can animate any content of your R Markdown document using the <code>:::</code> markers of the <code>rmarkdown</code> package followed by <code>{.aniview data-av-animation="ANIMATE-CSS EFFECT"}</code>. The animate-css effects are listed <a href="https://daneden.github.io/animate.css/">here</a>.</p>
+<p>Below an example with the “slideInUp” effect.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode md"><code class="sourceCode markdown"><a class="sourceLine" id="cb5-1" data-line-number="1">::: {.aniview data-av-animation="slideInUp"}</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">This element will be animated.</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">:::</a></code></pre></div>
+<p>You can learn more about the CSS class markers in the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">Custom block</a> chapter of the <em>R Markdown Cookbook</em> from Yihui Xie.</p>
+<div id="xaringan-presentation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#xaringan-presentation" class="anchor"></a>Xaringan presentation</h3>
+<p><a href="https://github.com/yihui/xaringan">xaringan</a> is a package for creating slideshows with <a href="https://github.com/gnab/remark">remark.js</a> using R Markdown. You can take a look at its introductory presentation <a href="https://slides.yihui.name/xaringan/">here</a>.</p>
+<p>You can easily animate a slide using the “animated” class of <a href="https://daneden.github.io/animate.css/">animate-css</a> with any animation effect.</p>
+<p>Below is a minimal example.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode md"><code class="sourceCode markdown"><a class="sourceLine" id="cb6-1" data-line-number="1">---</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">title: "Presentation Ninja"</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">subtitle: "with xaringan"</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">output:</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">  xaringan::moon_reader:</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="bn">    lib_dir: libs</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7">---</a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="bn">``</span>`{r, echo = FALSE}</a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">aniview::use_aniview()</a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="bn">``</span>`</a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="fu"># A normal slide</span></a>
+<a class="sourceLine" id="cb6-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb6-15" data-line-number="15">---</a>
+<a class="sourceLine" id="cb6-16" data-line-number="16">class: animated, bounceInDown</a>
+<a class="sourceLine" id="cb6-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb6-18" data-line-number="18"><span class="fu"># An animated slide</span></a></code></pre></div>
+</div>
 </div>
 </div>
 

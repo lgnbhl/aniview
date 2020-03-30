@@ -9,6 +9,8 @@ output: github_document
 
 # aniview <img src="man/figures/logo.png" align="right" />
 
+> Animate Shiny and R Markdown content when it comes into view
+
 Animate Shiny and R Markdown content when it comes into view using [animate-css](https://daneden.github.io/animate.css/) thanks to [AniView](https://jjcosgrove.github.io/jquery-aniview/).
 
 ## Usage
@@ -20,7 +22,7 @@ Install the package from Github.
 remotes::install_github("lgnbhl/aniview")
 ```
 
-### Shiny
+## Shiny
 
 In order to use aniview, you must first call `use_aniview()` in the apps' UI. 
 
@@ -84,7 +86,7 @@ server <- function(input, output) {
 shinyApp(ui, server)
 ```
 
-### R Markdown
+## R Markdown
 
 To animate a element of a R Markdown document, you must first call `use_aniview()` inside a R code chunk with ```{r, echo = FALSE}``` so the code will not be shown in the final document.
 
@@ -106,6 +108,31 @@ This element will be animated.
 
 You can learn more about the CSS class markers in the [Custom block](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html) chapter of the *R Markdown Cookbook* from Yihui Xie.
 
-## Notes
+### Xaringan presentation
 
-Any element already in the viewport when the user loads the page will have its animation triggered immediately if one has been set. In other words, it will not wait for the user to begin scrolling before initiating the animation on these elements.
+[xaringan](https://github.com/yihui/xaringan) is a package for creating slideshows with [remark.js](https://github.com/gnab/remark) using R Markdown. You can take a look at its introductory presentation [here](https://slides.yihui.name/xaringan/).
+
+You can easily animate a slide using the "animated" class of [animate-css](https://daneden.github.io/animate.css/) with any animation effect.
+
+Below is a minimal example.
+
+```md
+---
+title: "Presentation Ninja"
+subtitle: "with xaringan"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+---
+
+```{r, echo = FALSE}
+aniview::use_aniview()
+```
+
+# A normal slide
+
+---
+class: animated, bounceInDown
+
+# An animated slide
+```
