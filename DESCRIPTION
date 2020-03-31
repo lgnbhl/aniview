@@ -5,11 +5,7 @@ Authors@R:
     c(person(given = "Félix",
            family = "Luginbuhl",
            role = c("aut", "cre"),
-           email = "felix.luginbuhl@protonmail.ch"),
-      person(given = "Jonathan James",
-           family = "Cosgrove",
-           role = c("aut"),
-           comment = "Author of AniView")
+           email = "felix.luginbuhl@protonmail.ch")
       )
 Description: Animate Shiny and R Markdown content when it comes into view using animate-css effects thanks to jQuery AniView.
 License: MIT + file LICENSE
