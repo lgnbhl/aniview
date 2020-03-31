@@ -5,6 +5,26 @@
 #' 
 #' @importFrom jsonlite toJSON
 #' @importFrom htmltools tags tagList
+#' 
+#' @examples 
+#' library(shiny)
+#' 
+#' ui <- function(){
+#' fluidPage(
+#'   use_aniview(), # add use_aniview() in the UI
+#'   aniview(h1("Shiny with AniView"), animation = "fadeInUp"),
+#'   aniview(textOutput("text"), animation = "zoomIn")
+#' )
+#' }
+#'
+#'server <- function(input, output, session){
+#'  output$text <- renderText({
+#'    print("An animated text.")
+#'  })
+#'}
+#'
+#' if(interactive()) shinyApp(ui, server)
+#' 
 #' @export
 
 use_aniview <- function(

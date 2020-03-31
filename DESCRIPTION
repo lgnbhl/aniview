@@ -19,5 +19,7 @@ RoxygenNote: 7.1.0
 Imports: 
     jsonlite,
     htmltools
+Suggests: 
+    shiny
 URL: https://felixluginbuhl.com/aniview, https://github.com/lgnbhl/aniview
 BugReports: https://github.com/lgnbhl/aniview/issues

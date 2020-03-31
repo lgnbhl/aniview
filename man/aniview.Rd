@@ -2,7 +2,7 @@
 % Please edit documentation in R/aniview.R
 \name{aniview}
 \alias{aniview}
-\title{Animate an element}
+\title{Animate an element when it comes into view}
 \usage{
 aniview(element, animation, ...)
 }
@@ -14,5 +14,25 @@ aniview(element, animation, ...)
 \item{...}{Additional class element}
 }
 \description{
-Animate an element
+Programmatically animate Shiny and R Markdown content when it comes into view.
+}
+\examples{
+library(shiny)
+
+ui <- function(){
+fluidPage(
+  use_aniview(), # add use_aniview() in the UI
+  aniview(h1("Shiny with AniView"), animation = "fadeInUp"),
+  aniview(textOutput("text"), animation = "zoomIn")
+)
+}
+
+server <- function(input, output, session){
+ output$text <- renderText({
+   print("An animated text.")
+ })
+}
+
+if(interactive()) shinyApp(ui, server)
+
 }
