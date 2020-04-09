@@ -38,23 +38,21 @@ library(shiny)
 library(ggplot2)
 library(aniview)
 
-ui <- function(){
-  fluidPage(
+shinyApp(
+  ui = fluidPage(
+    align = "center",
     aniview::use_aniview(), # add use_aniview() in the UI
-    aniview(h1("Shiny with AniView", align = "center"), animation = "fadeInUp"),
+    aniview(h1("Shiny with AniView"), animation = "fadeInUp"),
     br(),
-    aniview(plotOutput("plot"), animation = "zoomIn")
-  )
-}
-
-server <- function(input, output, session){
-  output$plot <- renderPlot({
-    ggplot(mpg, aes(displ, hwy, colour = class)) + 
-      geom_point()
-  })
-}
-
-shinyApp(ui, server)
+    aniview(plotOutput("plot"), animation = "slideInRight")
+  ),
+  server <- function(input, output){
+    output$plot <- renderPlot({
+      ggplot(mpg, aes(displ, hwy, colour = class)) + 
+        geom_point()
+    })
+  }
+)
 ```
 
 ### Htmlwidgets
