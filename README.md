@@ -46,7 +46,7 @@ shinyApp(
     br(),
     aniview(plotOutput("plot"), animation = "slideInRight")
   ),
-  server <- function(input, output){
+  server = function(input, output){
     output$plot <- renderPlot({
       ggplot(mpg, aes(displ, hwy, colour = class)) + 
         geom_point()
