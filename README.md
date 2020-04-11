@@ -43,8 +43,8 @@ shinyApp(
     align = "center",
     aniview::use_aniview(), # add use_aniview() in the UI
     aniview(h1("Shiny with AniView"), animation = "fadeInUp"),
-    br(),
-    aniview(plotOutput("plot"), animation = "slideInRight")
+    HTML(rep("&darr;<br/><br/>scroll down<br/><br/>", 10)),
+    aniview(plotOutput("plot"), animation = "slideInLeft")
   ),
   server = function(input, output){
     output$plot <- renderPlot({
@@ -54,6 +54,9 @@ shinyApp(
   }
 )
 ```
+
+See the example application below running online
+<a href="https://lgnbhl.shinyapps.io/aniview/" target="_blank">here</a>.
 
 ### Htmlwidgets
 

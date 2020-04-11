@@ -125,8 +125,8 @@
 <a class="sourceLine" id="cb2-7" data-line-number="7">    <span class="dt">align =</span> <span class="st">"center"</span>,</a>
 <a class="sourceLine" id="cb2-8" data-line-number="8">    aniview<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/aniview/man/use_aniview.html">use_aniview</a></span>(), <span class="co"># add use_aniview() in the UI</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9">    <span class="kw"><a href="reference/aniview.html">aniview</a></span>(<span class="kw"><a href="https://rdrr.io/pkg/shiny/man/builder.html">h1</a></span>(<span class="st">"Shiny with AniView"</span>), <span class="dt">animation =</span> <span class="st">"fadeInUp"</span>),</a>
-<a class="sourceLine" id="cb2-10" data-line-number="10">    <span class="kw"><a href="https://rdrr.io/pkg/shiny/man/builder.html">br</a></span>(),</a>
-<a class="sourceLine" id="cb2-11" data-line-number="11">    <span class="kw"><a href="reference/aniview.html">aniview</a></span>(<span class="kw"><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput</a></span>(<span class="st">"plot"</span>), <span class="dt">animation =</span> <span class="st">"slideInRight"</span>)</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">    <span class="kw"><a href="https://rdrr.io/pkg/shiny/man/HTML.html">HTML</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(<span class="st">"&amp;darr;&lt;br/&gt;&lt;br/&gt;scroll down&lt;br/&gt;&lt;br/&gt;"</span>, <span class="dv">10</span>)),</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">    <span class="kw"><a href="reference/aniview.html">aniview</a></span>(<span class="kw"><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput</a></span>(<span class="st">"plot"</span>), <span class="dt">animation =</span> <span class="st">"slideInLeft"</span>)</a>
 <a class="sourceLine" id="cb2-12" data-line-number="12">  ),</a>
 <a class="sourceLine" id="cb2-13" data-line-number="13">  <span class="dt">server =</span> <span class="cf">function</span>(input, output){</a>
 <a class="sourceLine" id="cb2-14" data-line-number="14">    output<span class="op">$</span>plot &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/shiny/man/renderPlot.html">renderPlot</a></span>({</a>
@@ -135,6 +135,7 @@
 <a class="sourceLine" id="cb2-17" data-line-number="17">    })</a>
 <a class="sourceLine" id="cb2-18" data-line-number="18">  }</a>
 <a class="sourceLine" id="cb2-19" data-line-number="19">)</a></code></pre></div>
+<p>See the example application below running online <a href="https://lgnbhl.shinyapps.io/aniview/" target="_blank">here</a>.</p>
 <div id="htmlwidgets" class="section level3">
 <h3 class="hasAnchor">
 <a href="#htmlwidgets" class="anchor"></a>Htmlwidgets</h3>
