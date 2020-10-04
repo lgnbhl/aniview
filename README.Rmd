@@ -4,8 +4,11 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/aniview)](https://CRAN.R-project.org/package=aniview)
 [![pipeline status](https://gitlab.com/lgnbhl/aniview/badges/master/pipeline.svg)](https://gitlab.com/lgnbhl/aniview/pipelines)
+[![R build status](https://github.com/lgnbhl/aniview/workflows/R-CMD-check/badge.svg)](https://github.com/lgnbhl/aniview/actions)
+<!-- badges: end -->
 
 # aniview <img src="man/figures/logo.png" align="right" />
 
