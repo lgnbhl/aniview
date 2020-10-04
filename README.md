@@ -5,6 +5,8 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/aniview)](https://CRAN.R-project.org/package=aniview)
+[![Grand
+total](https://cranlogs.r-pkg.org/badges/grand-total/aniview)](https://cran.r-project.org/package=aniview)
 [![pipeline
 status](https://gitlab.com/lgnbhl/aniview/badges/master/pipeline.svg)](https://gitlab.com/lgnbhl/aniview/pipelines)
 [![R build
