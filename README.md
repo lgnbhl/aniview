@@ -40,8 +40,7 @@ remotes::install_github("lgnbhl/aniview")
 
 ## Shiny
 
-In order to use aniview, you must first call `use_aniview()` in the
-apps’ UI.
+In order to use aniview, you must first call `use_aniview()` in the UI.
 
 Then simply apply `aniview()` to any shiny element with an animation
 listed on the [animate-css
