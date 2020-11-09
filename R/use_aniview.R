@@ -4,7 +4,7 @@
 #' @param scrollPollInterval integrer. frequency at which user scrolling is 'polled' i.e. tested. This is in milliseconds and is an extension to jQuery's in-built 'scroll' event/handler.
 #' 
 #' @importFrom jsonlite toJSON
-#' @importFrom htmltools tags tagList
+#' @importFrom htmltools tags tagList htmlDependency
 #' 
 #' @examples
 #' 
