@@ -1,46 +1,18 @@
----
-output: github_document
----
+# Get Started
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+You can use aniview to animate content in Shiny, Rmarkdown and even [xaringan](https://github.com/yihui/xaringan) presentations.
 
-<!-- badges: start -->
-[![CRAN status](https://www.r-pkg.org/badges/version/aniview)](https://CRAN.R-project.org/package=aniview)
-[![Grand total](https://cranlogs.r-pkg.org/badges/grand-total/aniview)](https://cran.r-project.org/package=aniview)
-[![pipeline status](https://gitlab.com/lgnbhl/aniview/badges/master/pipeline.svg)](https://gitlab.com/lgnbhl/aniview/pipelines)
-[![R build status](https://github.com/lgnbhl/aniview/workflows/R-CMD-check/badge.svg)](https://github.com/lgnbhl/aniview/actions)
-<!-- badges: end -->
-
-# aniview <img src="man/figures/logo.png" align="right" />
-
-> Animate Shiny and R Markdown content when it comes into view
-
-The package `aniview` allows to animate Shiny and R Markdown content when it comes into view using [animate-css](https://daneden.github.io/animate.css/) thanks to [AniView](https://jjcosgrove.github.io/jquery-aniview/).
-
-## Installation
-
-Install the released version from CRAN.
-
-```{r install cran, eval = FALSE}
-install.packages("aniview")
-```
-
-To get a bug fix, or use a feature from the development version, you can install it from GitHub.
-
-```{r install github, eval = FALSE}
-# install.packages("remotes")
-remotes::install_github("lgnbhl/aniview")
-```
+The [aniview](https://jjcosgrove.github.io/jquery-aniview/) jquery plugin allows to enable animations only when content comes into view.
 
 ## Shiny
 
-In order to use aniview, you must first call `use_aniview()` in the UI. 
+In order to use aniview in R Shiny, you must first call `use_aniview()` in the UI. 
 
 Then simply apply `aniview()` to any shiny element with an animation listed on the [animate-css website](https://daneden.github.io/animate.css/).
 
 Here a basic example:
 
-```{r shiny, eval = FALSE}
+```r
 library(shiny)
 library(ggplot2)
 library(aniview)
@@ -62,15 +34,15 @@ shinyApp(
 )
 ```
 
-### Htmlwidgets
+## Htmlwidgets
 
 The function `aniview()` doesn't work directly with [htmlwidgets](https://www.htmlwidgets.org/).
 
-The solution is to put the htmlwidget inside a container and animate it.
+One solution is to put the htmlwidget inside a container and animate it.
 
 Below an example animating the `box()` from `shinydashboard` in order to use `plotly`.
 
-```{r htmlwidgets, eval = FALSE}
+```r
 library(shinydashboard)
 library(plotly)
 
@@ -100,13 +72,13 @@ shinyApp(ui, server)
 
 To animate a element of a R Markdown document, you must first call `use_aniview()` inside a R code chunk with ```{r, echo = FALSE}``` so the code will not be shown in the final document.
 
-``` r
+```r
 ```{r, echo = FALSE}
 aniview::use_aniview()
 ```
 ```
 
-Then you can animate any content of your R Markdown document using the `:::` markers of the `rmarkdown` package followed by `{.aniview data-av-animation="ANIMATE-CSS EFFECT"}`. The animate-css effects are listed [here](https://daneden.github.io/animate.css/).
+Then you can animate any content of your R Markdown document using the `:::` markers of the `rmarkdown` package followed by `{.aniview data-av-animation="<ANIMATE-CSS EFFECT>"}`. The animate-css effects are listed [here](https://daneden.github.io/animate.css/).
 
 Below an example with the "slideInUp" effect.
 
@@ -118,7 +90,7 @@ This element will be animated.
 
 You can learn more about the CSS class markers in the [Custom block](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html) chapter of the *R Markdown Cookbook* from Yihui Xie.
 
-### Xaringan presentation
+## Xaringan presentation
 
 [xaringan](https://github.com/yihui/xaringan) is a package for creating slideshows with [remark.js](https://github.com/gnab/remark) using R Markdown. You can take a look at its [introductory presentation](https://slides.yihui.name/xaringan/).
 

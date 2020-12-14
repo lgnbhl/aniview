@@ -46,6 +46,8 @@ Then simply apply `aniview()` to any shiny element with an animation
 listed on the [animate-css
 website](https://daneden.github.io/animate.css/).
 
+Here a basic example:
+
 ``` r
 library(shiny)
 library(ggplot2)
@@ -67,9 +69,6 @@ shinyApp(
   }
 )
 ```
-
-See the example application below running online
-<a href="https://lgnbhl.shinyapps.io/aniview/" target="_blank">here</a>.
 
 ### Htmlwidgets
 
