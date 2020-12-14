@@ -43,6 +43,7 @@ One solution is to put the htmlwidget inside a container and animate it.
 Below an example animating the `box()` from `shinydashboard` in order to use `plotly`.
 
 ```r
+library(shiny)
 library(shinydashboard)
 library(plotly)
 
