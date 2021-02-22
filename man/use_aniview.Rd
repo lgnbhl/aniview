@@ -4,12 +4,14 @@
 \alias{use_aniview}
 \title{Use AniView}
 \usage{
-use_aniview(animateThreshold = 0, scrollPollInterval = 20)
+use_aniview(animateThreshold = 0, scrollPollInterval = 20, use_cdn = TRUE)
 }
 \arguments{
 \item{animateThreshold}{integrer. +ve numbers delay the animation sequence until the specified number of pixels have come into view. -ve numbers will trigger the animation sequence prior to the element coming into view.}
 
 \item{scrollPollInterval}{integrer. frequency at which user scrolling is 'polled' i.e. tested. This is in milliseconds and is an extension to jQuery's in-built 'scroll' event/handler.}
+
+\item{use_cdn}{use CDN (by default) or usee locally stored files.}
 }
 \description{
 Use AniView
