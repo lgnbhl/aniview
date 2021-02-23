@@ -74,7 +74,7 @@ html_dependencies_aniview <- function(use_cdn = FALSE) {
       name = "animate.css",
       version = "3.7.2",
       src = "",
-      stylesheet = c(file = "htmlwidgets/animate.min.css"),
+      stylesheet = c(file = "assets/animate.min.css"),
       package = "aniview"
     )
   
@@ -91,7 +91,7 @@ html_dependencies_aniview <- function(use_cdn = FALSE) {
       name = "jquery-aniview",
       version = "1.0.2",
       src = "",
-      script = c(file = "htmlwidgets/jquery.aniview.js"),
+      script = c(file = "assets/jquery.aniview.js"),
       package = "aniview"
     )
   
