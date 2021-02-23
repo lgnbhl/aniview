@@ -4,7 +4,7 @@
 \alias{html_dependencies_aniview}
 \title{AniView dependencies}
 \usage{
-html_dependencies_aniview(use_cdn = FALSE)
+html_dependencies_aniview(use_cdn = TRUE)
 }
 \arguments{
 \item{use_cdn}{use CDN (by default) or use locally stored files.}
