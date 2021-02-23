@@ -59,7 +59,7 @@ use_aniview <- function(animateThreshold = 0, scrollPollInterval = 20, use_cdn =
 #' 
 #' @export
 
-html_dependencies_aniview <- function(use_cdn = FALSE) {
+html_dependencies_aniview <- function(use_cdn = TRUE) {
   
   # animate.css
   if(use_cdn)
