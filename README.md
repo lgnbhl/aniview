@@ -50,7 +50,8 @@ Here a basic example:
 
 ``` r
 library(shiny)
-library(ggplot2)
+library(tidyverse)
+library(ggrepel)
 library(aniview)
 
 shinyApp(
@@ -58,13 +59,16 @@ shinyApp(
     align = "center",
     aniview::use_aniview(), # add use_aniview() in the UI
     aniview(h1("Shiny with AniView"), animation = "fadeInUp"),
-    HTML(rep("&darr;<br/><br/>scroll down<br/><br/>", 10)),
-    aniview(plotOutput("plot"), animation = "slideInLeft")
+    HTML(rep("&darr;<br/><br/><br/><br/>scroll down<br/><br/>", 10)),
+    aniview(plotOutput("plot"), animation = "slideInLeft"),
+    br()
   ),
   server = function(input, output){
     output$plot <- renderPlot({
-      ggplot(mpg, aes(displ, hwy, colour = class)) + 
-        geom_point()
+      ggplot(starwars, aes(mass, height)) + 
+        geom_point(aes(color = gender)) +
+        geom_label_repel(aes(label = name), size = 3) +
+        labs(title = "Star Wars Characters Height vs Mass")
     })
   }
 )
