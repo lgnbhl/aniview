@@ -2,7 +2,7 @@
 #'
 #' @param animateThreshold integrer. +ve numbers delay the animation sequence until the specified number of pixels have come into view. -ve numbers will trigger the animation sequence prior to the element coming into view.
 #' @param scrollPollInterval integrer. frequency at which user scrolling is 'polled' i.e. tested. This is in milliseconds and is an extension to jQuery's in-built 'scroll' event/handler.
-#' @param use_cdn use CDN (by default) or usee locally stored files.
+#' @param use_cdn boolean. TRUE to use a Content Delivery Network (CDN), true by default, or false to use locally stored files.
 #' 
 #' @importFrom jsonlite toJSON
 #' @importFrom htmltools tags tagList htmlDependency
@@ -51,7 +51,7 @@ use_aniview <- function(animateThreshold = 0, scrollPollInterval = 20, use_cdn =
 #' 
 #' Get aniview html dependencies.
 #' 
-#' @param use_cdn use CDN (by default) or use locally stored files.
+#' @param use_cdn boolean. TRUE to use a Content Delivery Network (CDN), true by default, or false to use locally stored files.
 #' 
 #' @importFrom htmltools tagList htmlDependency
 #' 

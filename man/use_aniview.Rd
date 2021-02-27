@@ -11,7 +11,7 @@ use_aniview(animateThreshold = 0, scrollPollInterval = 20, use_cdn = TRUE)
 
 \item{scrollPollInterval}{integrer. frequency at which user scrolling is 'polled' i.e. tested. This is in milliseconds and is an extension to jQuery's in-built 'scroll' event/handler.}
 
-\item{use_cdn}{use CDN (by default) or usee locally stored files.}
+\item{use_cdn}{boolean. TRUE to use a Content Delivery Network (CDN), true by default, or false to use locally stored files.}
 }
 \description{
 Use AniView
