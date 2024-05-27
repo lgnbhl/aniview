@@ -1,0 +1,36 @@
+url: https://felixluginbuhl.com/aniview
+template:
+  bootstrap: 5
+  bootswatch: litera
+  ganalytics: UA-158089797-1
+  bslib:
+    primary: "#7c3615"
+
+authors:
+  Felix Luginbuhl:
+    href: "https://felixluginbuhl.com"
+
+navbar:
+  left:
+  - text: Home
+    href: index.html
+  - text: Reference
+    href: reference/index.html
+  - text: News
+    href: news/index.html
+  right:
+   - icon: fa-linkedin
+     href: https://www.linkedin.com/in/felixluginbuhl
+   - icon: fa-twitter
+     href: https://twitter.com/FelixLuginbuhl
+   - icon: fa-github
+     href: https://github.com/lgnbhl/aniview
+   - icon: fa-home
+     href: http://felixluginbuhl.com
+
+reference:
+  - title: "Functions"
+    contents: 
+      - aniview
+      - use_aniview
+      - html_dependencies_aniview

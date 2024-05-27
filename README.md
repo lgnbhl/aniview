@@ -1,16 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
 <!-- badges: start -->
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/aniview)](https://CRAN.R-project.org/package=aniview)
 [![Grand
 total](https://cranlogs.r-pkg.org/badges/grand-total/aniview)](https://cran.r-project.org/package=aniview)
-[![pipeline
-status](https://gitlab.com/lgnbhl/aniview/badges/master/pipeline.svg)](https://gitlab.com/lgnbhl/aniview/pipelines)
-[![R build
-status](https://github.com/lgnbhl/aniview/workflows/R-CMD-check/badge.svg)](https://github.com/lgnbhl/aniview/actions)
+[![R-CMD-check](https://github.com/lgnbhl/aniview/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/lgnbhl/aniview/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # aniview <img src="man/figures/logo.png" align="right" />
@@ -124,9 +120,9 @@ aniview::use_aniview()
 ```
 
 Then you can animate any content of your R Markdown document using the
-`:::` markers of the `rmarkdown` package followed by `{.aniview
-data-av-animation="ANIMATE-CSS EFFECT"}`. The animate-css effects are
-listed [here](https://daneden.github.io/animate.css/).
+`:::` markers of the `rmarkdown` package followed by
+`{.aniview data-av-animation="ANIMATE-CSS EFFECT"}`. The animate-css
+effects are listed [here](https://daneden.github.io/animate.css/).
 
 Below an example with the “slideInUp” effect.
 

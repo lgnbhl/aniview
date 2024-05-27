@@ -66,7 +66,7 @@ html_dependencies_aniview <- function(use_cdn = TRUE) {
     animatecss <- htmltools::htmlDependency(
       name = "animate.css",
       version = "3.7.2",
-      src = c(href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/"),
+      src = c(href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/", crossorigin = "anonymous"),
       stylesheet = "animate.min.css"
     )
   else 
@@ -83,7 +83,7 @@ html_dependencies_aniview <- function(use_cdn = TRUE) {
     jqueryaniview <- htmltools::htmlDependency(
       name = "jquery-aniview",
       version = "1.0.2",
-      src = c(href = "https://unpkg.com/jquery-aniview@1.0.2/dist/"),
+      src = c(href = "https://unpkg.com/jquery-aniview@1.0.2/dist/", crossorigin="anonymous"),
       script = "jquery.aniview.js"
     )
   else 
