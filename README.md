@@ -9,7 +9,7 @@ total](https://cranlogs.r-pkg.org/badges/grand-total/aniview)](https://cran.r-pr
 [![R-CMD-check](https://github.com/lgnbhl/aniview/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/lgnbhl/aniview/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-# aniview <img src="man/figures/logo.png" align="right" />
+# aniview <img src="man/figures/logo.png" align="right" width="138" />
 
 > Animate Shiny and R Markdown content when it comes into view
 
