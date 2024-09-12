@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.0.9
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-05-27T17:35Z
+last_built: 2024-09-12T13:18Z
 urls:
   reference: https://felixluginbuhl.com/aniview/reference
   article: https://felixluginbuhl.com/aniview/articles
